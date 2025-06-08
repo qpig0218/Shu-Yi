@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>許淑怡醫學教育職涯發展規劃報告書</title>
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --tertiary-color: #fbbc05;
+            --quaternary-color: #ea4335;
+            --mentor-color: #ff7043;
+            --coach-color: #4caf50;
+            --light-bg: #f8f9fa;
+            --dark-text: #202124;
+            --medium-text: #5f6368;
+            --light-text: #dadce0;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft JhengHei', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        header h2 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            opacity: 0.9;
+        }
+        
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .tab-btn {
+            background-color: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            padding: 12px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+        
+        .tab-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .tab-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 8px rgba(66, 133, 244, 0.3);
+        }
+        
+        /* AI Mentor建議頁籤 */
+        .tab-btn[data-tab="mentor"] {
+            color: var(--mentor-color);
+            border: 2px solid var(--mentor-color);
+        }
+        
+        .tab-btn[data-tab="mentor"]:hover {
+            background-color: var(--mentor-color);
+            color: white;
+        }
+        
+        .tab-btn[data-tab="mentor"].active {
+            background-color: var(--mentor-color);
+            color: white;
+            box-shadow: 0 4px 8px rgba(255, 112, 67, 0.3);
+        }
+        
+        /* AI Coach頁籤 */
+        .tab-btn[data-tab="coach"] {
+            color: var(--coach-color);
+            border: 2px solid var(--coach-color);
+        }
+        
+        .tab-btn[data-tab="coach"]:hover {
+            background-color: var(--coach-color);
+            color: white;
+        }
+        
+        .tab-btn[data-tab="coach"].active {
+            background-color: var(--coach-color);
+            color: white;
+            box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+        }
+        
+        .tab-content {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px var(--shadow);
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .tab-content h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--light-text);
+            padding-bottom: 10px;
+        }
+        
+        #mentor h2 {
+            color: var(--mentor-color);
+            border-bottom: 2px solid var(--mentor-color);
+        }
+        
+        #coach h2 {
+            color: var(--coach-color);
+            border-bottom: 2px solid var(--coach-color);
+        }
+        
+        .tab-content h3 {
+            color: var(--secondary-color);
+            margin: 25px 0 15px;
+            font-size: 1.4rem;
+        }
+        
+        .tab-content h4 {
+            color: var(--medium-text);
+            margin: 20px 0 10px;
+            font-size: 1.2rem;
+        }
+        
+        .tab-content p, .tab-content li {
+            margin-bottom: 15px;
+            color: var(--medium-text);
+        }
+        
+        .tab-content ul, .tab-content ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .tab-content li {
+            margin-bottom: 8px;
+        }
+        
+        .career-path {
+            background-color: #f0f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+            margin: 20px 0;
+        }
+        
+        .career-stage {
+            display: flex;
+            margin: 15px 0;
+            align-items: center;
+        }
+        
+        .career-stage-icon {
+            background-color: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .career-stage-content {
+            flex-grow: 1;
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+        }
+        
+        .timeline-item {
+            flex: 1;
+            text-align: center;
+            padding: 0 10px;
+            position: relative;
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            right: -50%;
+            width: 100%;
+            height: 3px;
+            background-color: var(--light-text);
+            z-index: 1;
+        }
+        
+        .timeline-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #fff;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--primary-color);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .timeline-year {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .timeline-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .grid-item {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+        
+        .grid-item h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        
+        .hashtag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .hashtag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        .strategy-section {
+            margin: 25px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid;
+        }
+        
+        .mentor-tip {
+            background-color: #fff3e0;
+            border-left: 4px solid var(--mentor-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .mentor-tip strong {
+            color: var(--mentor-color);
+        }
+        
+        .coach-tip {
+            background-color: #e8f5e9;
+            border-left: 4px solid var(--coach-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .coach-tip strong {
+            color: var(--coach-color);
+        }
+        
+        .progress-container {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .progress-bar {
+            background-color: #e0e0e0;
+            height: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: var(--coach-color);
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .level-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        
+        .level-item {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .level-item.active {
+            color: var(--coach-color);
+            font-weight: bold;
+        }
+        
+        .lhs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+        
+        .lhs-table th, .lhs-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--light-text);
+        }
+        
+        .lhs-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .lhs-table tr:nth-child(even) {
+            background-color: rgba(66, 133, 244, 0.05);
+        }
+        
+        .lhs-table tr:hover {
+            background-color: rgba(66, 133, 244, 0.1);
+        }
+        
+        .career-vision {
+            max-width: 600px;
+            margin: 40px auto;
+            text-align: center;
+        }
+        
+        .vision-step {
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            position: relative;
+            background-color: #fff;
+            box-shadow: 0 2px 6px var(--shadow);
+        }
+        
+        .vision-step:not(:last-child)::after {
+            content: '↑';
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .vision-step:nth-child(1) {
+            background-color: #e8f4fc;
+        }
+        
+        .vision-step:nth-child(2) {
+            background-color: #e0f7fa;
+        }
+        
+        .vision-step:nth-child(3) {
+            background-color: #e0f2f1;
+        }
+        
+        .vision-step:nth-child(4) {
+            background-color: #e8eaf6;
+        }
+        
+        .vision-step:nth-child(5) {
+            background-color: #f3e5f5;
+        }
+        
+        .vision-step h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .timeline {
+                flex-direction: column;
+            }
+            
+            .timeline-item {
+                margin-bottom: 30px;
+            }
+            
+            .timeline-item:not(:last-child)::after {
+                top: auto;
+                bottom: -15px;
+                right: auto;
+                left: 40px;
+                width: 3px;
+                height: 30px;
+            }
+            
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>許淑怡醫學教育職涯發展規劃報告書</h1>
+            <h2>願景：成為醫學教育制度設計與創新引領者</h2>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="profile">個人專業檔案</button>
+            <button class="tab-btn" data-tab="hashtag">我的Hashtag</button>
+            <button class="tab-btn" data-tab="traits">個人特質分析</button>
+            <button class="tab-btn" data-tab="competencies">核心競爭力</button>
+            <button class="tab-btn" data-tab="goals">短中長期職涯目標</button>
+            <button class="tab-btn" data-tab="stages">三階段發展重點</button>
+            <button class="tab-btn" data-tab="shared-goals">共同實現目標</button>
+            <button class="tab-btn" data-tab="strategies">醫院學習型照護體系戰略</button>
+            <button class="tab-btn" data-tab="amee">Why AMEE？</button>
+            <button class="tab-btn" data-tab="second-curve">人生第二曲線</button>
+            <button class="tab-btn" data-tab="vision">十年願景</button>
+            <button class="tab-btn" data-tab="career-vision">職涯發展願景</button>
+            <button class="tab-btn" data-tab="conclusion">結語</button>
+            <button class="tab-btn" data-tab="coach">AI Coach職涯教練</button>
+            <button class="tab-btn" data-tab="mentor">AI Mentor建議</button>
+        </div>
+        
+        <!-- 個人專業檔案 -->
+        <div class="tab-content active" id="profile">
+            <h2>1. 個人專業檔案</h2>
+            
+            <h3>基本資料</h3>
+            <p><strong>姓名</strong>：許淑怡<br>
+            <strong>現職</strong>：奇美醫院 教學中心 教學行政管理員<br>
+            <strong>年資</strong>：18年<br>
+            <strong>專業背景</strong>：醫學教育行政、實習醫學生訓練規劃、教學品質管理與評鑑作業、教學歷程平台、跨科協調、QCC專案執行與學習型組織文化推動</p>
+            
+            <h3>背景簡介</h3>
+            <p>任職於奇美醫院教學中心教學行政管理員，具備18年資歷。負責實習醫學生教學行政、學員學習歷程系統建置、教學費用核算、學校建教研究合作經費編列及核銷、教職升等與評鑑準備、QCC品質管理等核心業務，並規劃醫學生人文教育活動(參觀奇美博物館)、SDM(醫病共同決策)醫病溝通課程、病歷寫作指導、防護衣穿脫、國考複習課程及至醫學院校辧理實習說明會等，主要為實習醫學生制度發展的關鍵推手。</p>
+        </div>
+        
+        <!-- 我的Hashtag -->
+        <div class="tab-content" id="hashtag">
+            <h2>2. 我的Hashtag</h2>
+            
+            <div class="hashtag-container">
+                <span class="hashtag">#醫學教育守護者</span>
+                <span class="hashtag">#制度設計師</span>
+                <span class="hashtag">#跨科協調高手</span>
+                <span class="hashtag">#數據分析愛好者</span>
+                <span class="hashtag">#學習歷程建築師</span>
+                <span class="hashtag">#品質改善推動者</span>
+                <span class="hashtag">#人文教育倡導者</span>
+                <span class="hashtag">#18年經驗累積</span>
+                <span class="hashtag">#教學行政專家</span>
+                <span class="hashtag">#創新思維實踐者</span>
+            </div>
+            
+            <h3>我的專業標籤說明</h3>
+            <p>這些標籤代表了我在醫學教育領域18年來的專業累積與價值定位。從基礎的行政執行到制度設計，從數據管理到人文關懷，每個標籤都是我職涯旅程中的重要里程碑。</p>
+        </div>
+        
+        <!-- 個人特質分析 -->
+        <div class="tab-content" id="traits">
+            <h2>3. 個人特質分析</h2>
+            
+            <div class="grid-container">
+                <div class="grid-item" style="background-color: rgba(66, 133, 244, 0.1); border-left: 4px solid var(--primary-color);">
+                    <h3>細心耐心</h3>
+                    <p>熟悉複雜流程與多單位協調，能應對繁瑣行政事務並落實追蹤</p>
+                </div>
+                
+                <div class="grid-item" style="background-color: rgba(52, 168, 83, 0.1); border-left: 4px solid var(--secondary-color);">
+                    <h3>責任感強</h3>
+                    <p>主動承擔教學行政任務，對工作結果高度負責</p>
+                </div>
+                
+                <div class="grid-item" style="background-color: rgba(251, 188, 5, 0.1); border-left: 4px solid var(--tertiary-color);">
+                    <h3>高度同理心</h3>
+                    <p>理解醫師、學生與主管三方需求，促進有效溝通與協調</p>
+                </div>
+                
+                <div class="grid-item" style="background-color: rgba(234, 67, 53, 0.1); border-left: 4px solid var(--quaternary-color);">
+                    <h3>系統性思考</h3>
+                    <p>擅長統整流程與資料，有條理地安排工作順序與標準化作業</p>
+                </div>
+                
+                <div class="grid-item" style="background-color: rgba(103, 58, 183, 0.1); border-left: 4px solid #673ab7;">
+                    <h3>持續學習者</h3>
+                    <p>對醫學教育創新具高度敏銳度，樂於參與新課程或趨勢研究（如CBME、AMEE等）</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 核心競爭力 -->
+        <div class="tab-content" id="competencies">
+            <h2>4. 核心競爭力</h2>
+            
+            <div class="grid-container">
+                <div class="grid-item" style="background-color: rgba(66, 133, 244, 0.1); border-left: 4px solid var(--primary-color);">
+                    <h3>教學行政規劃</h3>
+                    <p>制定與維護醫學生實習流程、職前訓練、結訓作業、師生回饋等完整制度</p>
+                </div>
+                
+                <div class="grid-item" style="background-color: rgba(52, 168, 83, 0.1); border-left: 4px solid var(--secondary-color);">
+                    <h3>財務與教學費用核算</h3>
+                    <p>準確核算每月教師導談費、教學門診費、建教合作經費報銷，具備良好預算管理能力</p>
+                </div>
+                
+                <div class="grid-item" style="background-color: rgba(251, 188, 5, 0.1); border-left: 4px solid var(--tertiary-color);">
+                    <h3>醫學教育合作與認證支援</h3>
+                    <p>參與醫學院校教職申請、教學醫院評鑑及醫學院校TMAC認證前後準備、現場訪查接待，支援學術合作規劃</p>
+                </div>
+                
+                <div class="grid-item" style="background-color: rgba(234, 67, 53, 0.1); border-left: 4px solid var(--quaternary-color);">
+                    <h3>跨單位協調與溝通</h3>
+                    <p>整合科部、學校、院內行政資源，主持與記錄多次協調與改善性會議</p>
+                </div>
+                
+                <div class="grid-item" style="background-color: rgba(103, 58, 183, 0.1); border-left: 4px solid #673ab7;">
+                    <h3>教育品質提升（QCC）</h3>
+                    <p>發想並執行導師制度建立、CBME教學模式導入等QCC專案，增進臨床教學成效</p>
+                </div>
+                
+                <div class="grid-item" style="background-color: rgba(0, 150, 136, 0.1); border-left: 4px solid #009688;">
+                    <h3>建置學習歷程平台</h3>
+                    <p>協助建立學生學習歷程系統，持續優化e-portfolio與臨床實務表現</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 短中長期職涯目標 -->
+        <div class="tab-content" id="goals">
+            <h2>5. 短中長期職涯目標</h2>
+            
+            <div class="career-path">
+                <div class="career-stage">
+                    <div class="career-stage-icon">短</div>
+                    <div class="career-stage-content">
+                        <h3>短期目標 (1-2年)</h3>
+                        <h4>角色：教學制度優化與數據分析設計者</h4>
+                        <h4>目標：</h4>
+                        <ul>
+                            <li>建立完整導師制度與教學行政SOP</li>
+                            <li>發展學習歷程平台分析儀表板</li>
+                            <li>強化教學管理流程的數位化與標準化</li>
+                            <li>完善教學資料收集與分析系統</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="career-stage">
+                    <div class="career-stage-icon">中</div>
+                    <div class="career-stage-content">
+                        <h3>中期目標 (3-5年)</h3>
+                        <h4>角色：教學制度與跨院合作推手</h4>
+                        <h4>目標：</h4>
+                        <ul>
+                            <li>成為教學制度與跨院合作推手</li>
+                            <li>使用數位賦能工具強化教學資料應用</li>
+                            <li>QCC與教學制度成果於院內發表</li>
+                            <li>推動教學品質提升的系統性方法</li>
+                            <li>建立跨院校教學資源共享機制</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="career-stage">
+                    <div class="career-stage-icon">長</div>
+                    <div class="career-stage-content">
+                        <h3>長期目標 (6-10年)</h3>
+                        <h4>角色：醫學教育制度創新與政策參與者</h4>
+                        <h4>目標：</h4>
+                        <ul>
+                            <li>發展醫學人文課程與數位賦能推廣</li>
+                            <li>參與教學政策規劃與制度設計</li>
+                            <li>成為醫學教育領域的創新引領者</li>
+                            <li>建立可複製的教學行政模式</li>
+                            <li>推動醫學教育的人本價值深化</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 三階段發展重點 -->
+        <div class="tab-content" id="stages">
+            <h2>6. 三階段發展重點</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">🌱</div>
+                    <div class="timeline-year">第一階段</div>
+                    <div class="timeline-title">基礎建設期</div>
+                    <p>專注於制度優化與流程標準化</p>
+                    <ul>
+                        <li>完善導師制度架構</li>
+                        <li>建立數據收集系統</li>
+                        <li>強化跨部門協作</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">🚀</div>
+                    <div class="timeline-year">第二階段</div>
+                    <div class="timeline-title">能力提升期</div>
+                    <p>發展專業技能與影響力</p>
+                    <ul>
+                        <li>數位工具應用深化</li>
+                        <li>教學創新方案實施</li>
+                        <li>跨院合作網絡建立</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">🌟</div>
+                    <div class="timeline-year">第三階段</div>
+                    <div class="timeline-title">價值創造期</div>
+                    <p>成為制度創新引領者</p>
+                    <ul>
+                        <li>政策建言與參與</li>
+                        <li>知識輸出與傳承</li>
+                        <li>醫學人文推廣</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 共同實現目標 -->
+        <div class="tab-content" id="shared-goals">
+            <h2>7. 共同實現目標</h2>
+            
+            <h3>與醫院共同成長的願景</h3>
+            <p>透過個人職涯發展與醫院策略目標的結合，創造雙贏局面：</p>
+            
+            <div class="grid-container">
+                <div class="grid-item" style="background-color: rgba(66, 133, 244, 0.1); border-left: 4px solid var(--primary-color);">
+                    <h3>提升教學品質</h3>
+                    <ul>
+                        <li>協助醫院通過各項教學評鑑</li>
+                        <li>建立標竿教學制度</li>
+                        <li>提升實習醫學生滿意度</li>
+                    </ul>
+                </div>
+                
+                <div class="grid-item" style="background-color: rgba(52, 168, 83, 0.1); border-left: 4px solid var(--secondary-color);">
+                    <h3>推動數位轉型</h3>
+                    <ul>
+                        <li>建立智慧教學管理系統</li>
+                        <li>發展數據驅動決策文化</li>
+                        <li>創新教學行政流程</li>
+                    </ul>
+                </div>
+                
+                <div class="grid-item" style="background-color: rgba(251, 188, 5, 0.1); border-left: 4px solid var(--tertiary-color);">
+                    <h3>培育優秀人才</h3>
+                    <ul>
+                        <li>完善導師支持系統</li>
+                        <li>強化醫學人文教育</li>
+                        <li>培養具同理心的醫療人才</li>
+                    </ul>
+                </div>
+                
+                <div class="grid-item" style="background-color: rgba(234, 67, 53, 0.1); border-left: 4px solid var(--quaternary-color);">
+                    <h3>擴大社會影響</h3>
+                    <ul>
+                        <li>建立可複製的教學模式</li>
+                        <li>分享最佳實踐經驗</li>
+                        <li>參與醫學教育政策制定</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 醫院學習型照護體系戰略 -->
+        <div class="tab-content" id="strategies">
+            <h2>8. 醫院學習型照護體系戰略對應（LHS）</h2>
+            
+            <table class="lhs-table">
+                <thead>
+                    <tr>
+                        <th>LHS構面</th>
+                        <th>對應發展策略</th>
+                        <th>預期成效</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>學員參與</strong></td>
+                        <td>發展學員回饋與共構制度（如回饋委員會、導談紀錄）</td>
+                        <td>提升學習滿意度與參與感</td>
+                    </tr>
+                    <tr>
+                        <td><strong>數位平台</strong></td>
+                        <td>整合學習歷程、導談、滿意度等資料於統一系統</td>
+                        <td>資料整合效率提升80%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>即時資料分析</strong></td>
+                        <td>建立Power BI視覺化儀表板，用於教學監測與管理決策</td>
+                        <td>決策時效性提升，問題早期預警</td>
+                    </tr>
+                    <tr>
+                        <td><strong>誘因設計</strong></td>
+                        <td>制定教學獎勵與點數制度，與升等連動</td>
+                        <td>教師教學投入度增加</td>
+                    </tr>
+                    <tr>
+                        <td><strong>教學文化</strong></td>
+                        <td>帶動跨科部教學對話、導師社群建立</td>
+                        <td>形成學習型組織文化</td>
+                    </tr>
+                    <tr>
+                        <td><strong>系統性學習</strong></td>
+                        <td>撰寫SOP與教學流程文件，建立持續改進架構</td>
+                        <td>知識管理系統化</td>
+                    </tr>
+                    <tr>
+                        <td><strong>嵌入式研究</strong></td>
+                        <td>QCC成果發表與制度研究轉化</td>
+                        <td>實務研究成果產出</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Why AMEE？ -->
+        <div class="tab-content" id="amee">
+            <h2>9. Why AMEE？（課程主題與成長曲線的搭配）</h2>
+            
+            <div class="grid-container">
+                <div class="grid-item" style="background-color: rgba(66, 133, 244, 0.1); border-left: 4px solid var(--primary-color);">
+                    <h3>Supporting Learners（學員支持）</h3>
+                    <h4>為什麼適合我：</h4>
+                    <ul>
+                        <li>我一直在做實習學生支持（如導談、滿意度、博物館活動），此主題能提供我更多國際實務與策略架構</li>
+                        <li>我可學到：Mentoring架構設計、心理健康支持系統、Early Warning回報系統</li>
+                    </ul>
+                    <h4>可應用在：</h4>
+                    <ul>
+                        <li>導師制度優化</li>
+                        <li>學員支持計畫升級與制度化</li>
+                    </ul>
+                </div>
+                
+                <div class="grid-item" style="background-color: rgba(52, 168, 83, 0.1); border-left: 4px solid var(--secondary-color);">
+                    <h3>Education and Management（教育與管理）</h3>
+                    <h4>為什麼適合我：</h4>
+                    <ul>
+                        <li>我負責多項教學制度規劃與流程管理，這主題將幫助我理解如何系統化規劃與帶動改變</li>
+                        <li>我可學到：策略規劃、變革管理、品質監測指標建構</li>
+                    </ul>
+                    <h4>適合我的角色轉型：</h4>
+                    <ul>
+                        <li>教學制度設計者</li>
+                        <li>教學行政顧問</li>
+                        <li>跨院協調者</li>
+                    </ul>
+                </div>
+                
+                <div class="grid-item" style="background-color: rgba(251, 188, 5, 0.1); border-left: 4px solid var(--tertiary-color);">
+                    <h3>AI / Technology Enhanced Learning (TEL)（AI與科技輔助學習）</h3>
+                    <h4>為什麼適合我：</h4>
+                    <ul>
+                        <li>我正在管理學習歷程平台、導談記錄、學員回饋，正好可以導入AI工具、數據分析儀表板</li>
+                        <li>我可學到：如何整合AI進入CBME、歷程追蹤、自動化教學管理系統</li>
+                    </ul>
+                    <h4>適合我在LHS轉型中的角色：</h4>
+                    <ul>
+                        <li>學習歷程平台設計者</li>
+                        <li>數據驅動教學品質分析者</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 人生第二曲線 -->
+        <div class="tab-content" id="second-curve">
+            <h2>10. 人生第二曲線策略</h2>
+            
+            <h3>第一曲線：目前的優勢與成就曲線</h3>
+            <div style="background-color: #e8f4fc; padding: 20px; border-radius: 10px; margin-bottom: 30px;">
+                <div class="grid-container">
+                    <div class="grid-item" style="background-color: rgba(66, 133, 244, 0.1); border-left: 4px solid var(--primary-color);">
+                        <h4>教學行政執行與制度落實</h4>
+                        <ul>
+                            <li>實習醫學生教學行政管理</li>
+                            <li>教師獎項統計與教學費用核算</li>
+                            <li>教職升等與評鑑準備</li>
+                            <li>學員學習歷程系統維護</li>
+                            <li>QCC品質管理執行</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>第二曲線建構：培養與執行新角色的價值曲線</h3>
+            <div style="background-color: #e0f7fa; padding: 20px; border-radius: 10px; margin-bottom: 30px;">
+                <div class="grid-container">
+                    <div class="grid-item" style="background-color: rgba(0, 150, 136, 0.1); border-left: 4px solid #009688;">
+                        <h4>醫學院校教職發展制度與跨院校實習推動者</h4>
+                        <p>從單一醫院內部管理拓展至跨院校合作與人才培育體系建設，成為連結各醫學教育機構的樞紐角色</p>
+                    </div>
+                    
+                    <div class="grid-item" style="background-color: rgba(103, 58, 183, 0.1); border-left: 4px solid #673ab7;">
+                        <h4>建立多重角色定位</h4>
+                        <ul>
+                            <li>行政管理者：建立高效能教學行政體系</li>
+                            <li>策略設計者：參與教學政策與系統規劃</li>
+                            <li>人文策展人：推動醫學人文教育創新</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>轉型策略</h3>
+            <ul>
+                <li><strong>轉型方向</strong>：從「做」的角色走向「設計」與「啟動」的角色</li>
+                <li><strong>實踐重點</strong>：建立系統、傳承經驗、影響文化</li>
+                <li><strong>標誌行動</strong>：發表行政實務、設計教職輔導模組、建立知識管理平台</li>
+            </ul>
+        </div>
+        
+        <!-- 十年願景 -->
+        <div class="tab-content" id="vision">
+            <h2>11. 十年願景（2025-2035）</h2>
+            
+            <p>我希望成為一位能將教學制度轉化為可實踐藍圖、並具有知識輸出與政策倡議能力的醫學教育創新引領者。</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">🚀</div>
+                    <div class="timeline-year">2025-2027</div>
+                    <div class="timeline-title">奠基期</div>
+                    <p>建立制度與數據基礎</p>
+                    <ul>
+                        <li>建立制度與數據分析架構</li>
+                        <li>完成行政知識內部傳承</li>
+                        <li>優化導師制度與學習歷程平台</li>
+                        <li>發展數據分析儀表板</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">📈</div>
+                    <div class="timeline-year">2028-2030</div>
+                    <div class="timeline-title">發展期</div>
+                    <p>整合人文與數據能力</p>
+                    <ul>
+                        <li>擔任制度發展推動者</li>
+                        <li>開發醫學人文課程</li>
+                        <li>建立數據結合課程評估體系</li>
+                        <li>推動跨院校合作模式</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">🌐</div>
+                    <div class="timeline-year">2031-2035</div>
+                    <div class="timeline-title">影響期</div>
+                    <p>擴大政策影響力</p>
+                    <ul>
+                        <li>擔任策略與制度顧問角色</li>
+                        <li>參與醫學教育政策規劃</li>
+                        <li>建立可複製的教學行政模式</li>
+                        <li>推動醫學教育創新與人本價值</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>十年後的願景畫面</h3>
+            <p>成為「醫學教育行政創新推動者」，同時具備：</p>
+            <ul>
+                <li>策略管理能力（教學制度規劃）</li>
+                <li>數據應用能力（教學可視化平台）</li>
+                <li>人才發展能力（教師與行政人員賦能）</li>
+                <li>國際影響力（參與AMEE等會議）</li>
+            </ul>
+        </div>
+        
+        <!-- 職涯發展願景 -->
+        <div class="tab-content" id="career-vision">
+            <h2>12. 職涯發展願景</h2>
+            
+            <div class="career-vision">
+                <div class="vision-step">
+                    <h3>醫學教育制度設計的領導者與發聲者</h3>
+                    <p>推動醫學教育政策創新與制度完善，成為具有影響力的行業聲音</p>
+                </div>
+                <div class="vision-step">
+                    <h3>可複製教學行政與學習支持模組推廣者</h3>
+                    <p>建立系統化、可擴展的教學行政與學習支持模式，推廣至其他醫療機構</p>
+                </div>
+                <div class="vision-step">
+                    <h3>學習型照護體系進化引領者</h3>
+                    <p>持續推動學習型照護體系的創新與進化，整合教學、實踐與研究</p>
+                </div>
+                <div class="vision-step">
+                    <h3>跨院校醫學教育合作促進者</h3>
+                    <p>從醫院內部影響擴大至其他醫學院校，實踐持續改善與人本教學價值</p>
+                </div>
+            </div>
+            
+            <p>從教學行政實務執行者，成長為能策略性推動制度與人才發展的「教育領導者」，並透過學習型照護體系的導入、教學行政數據轉型、跨校合作協作平台建立與教師支持制度設計，真正實踐「讓行政成為教育的引擎」。</p>
+        </div>
+        
+        <!-- 結語 -->
+        <div class="tab-content" id="conclusion">
+            <h2>13. 結語</h2>
+            
+            <p>從教學行政的默默耕耘，到制度設計的主動策劃，我的職涯已不僅是「執行者」的角色，而是逐步邁向制度創新者與價值推動者的轉型歷程。透過學習、分享與知識轉譯，將本地的實務經驗擴展為跨院共享、甚至國際連結的資源網絡。</p>
+            
+            <p>十年願景不只是長期計畫，更是醫學教育路上的承諾與初心，持續培育以人為本且有能力的醫療人才。</p>
+            
+            <p>在未來的發展中，我期許自己能夠運用18年來累積的教學行政經驗，結合對醫學人文的關注與數位工具的應用能力，為醫學教育的創新與進步貢獻力量，成為連結理念與實踐、制度與人文的橋樑。</p>
+            
+            <p><strong>行政不只是支援，行政是創造改變的種子。</strong><br>
+            未來十年，期望將持續秉持專業、信任、創新三大信念，於教學醫院中深耕影響力、耕耘制度文化，成為醫學教育中不可或缺的系統設計者與人才培育者。</p>
+        </div>
+        
+        <!-- AI Coach職涯教練 -->
+        <div class="tab-content" id="coach">
+            <h2>14. AI Coach職涯教練</h2>
+            
+            <div class="coach-tip">
+                <p><strong>您好，淑怡！</strong>我是您的AI職涯教練，負責協助您規劃達成目標的具體路徑，掌握當前進度，並提供實時執行策略。讓我們一起檢視您的現況並制定行動計畫！</p>
+            </div>
+            
+            <h3>📊 您的行政進階位置</h3>
+            
+            <div class="progress-container">
+                <h4>管理職務晉升路徑</h4>
+                <p>您目前位於：<strong>高級專員</strong>層級</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 40%;">40%</div>
+                </div>
+                <div class="level-indicator">
+                    <div class="level-item">小組長</div>
+                    <div class="level-item">副組長</div>
+                    <div class="level-item active">組長/專員</div>
+                    <div class="level-item">高級專員</div>
+                    <div class="level-item">主任/副主任</div>
+                </div>
+            </div>
+            
+            <div class="progress-container">
+                <h4>專業能力進階（8 Level制度）</h4>
+                <p>您目前位於：<strong>M5</strong>層級</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 62.5%;">M5</div>
+                </div>
+                <div class="level-indicator">
+                    <div class="level-item">M1</div>
+                    <div class="level-item">M2</div>
+                    <div class="level-item">M3</div>
+                    <div class="level-item">M4</div>
+                    <div class="level-item active">M5</div>
+                    <div class="level-item">M6</div>
+                    <div class="level-item">M7</div>
+                    <div class="level-item">M8</div>
+                </div>
+            </div>
+            
+            <h3>🎯 當前Level進度分析</h3>
+            
+            <div class="grid-container">
+                <div class="grid-item" style="background-color: rgba(76, 175, 80, 0.1); border-left: 4px solid var(--coach-color);">
+                    <h4>M5進度：55%</h4>
+                    <p><strong>已完成：</strong></p>
+                    <ul>
+                        <li>✅ 跨科協作能力成熟</li>
+                        <li>✅ QCC專案執行經驗</li>
+                        <li>✅ 制度建立與優化</li>
+                    </ul>
+                    <p><strong>待強化：</strong></p>
+                    <ul>
+                        <li>⏳ 對外發表與分享</li>
+                        <li>⏳ 數據分析能力認證</li>
+                        <li>⏳ 專案成果量化呈現</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>🚀 即時執行策略</h3>
+            
+            <div class="coach-tip">
+                <p><strong>本季重點行動（Q1 2025）：</strong></p>
+            </div>
+            
+            <ol>
+                <li><strong>建立個人品牌</strong>
+                    <ul>
+                        <li>整理18年經驗，撰寫「教學行政最佳實踐」文章</li>
+                        <li>在院內刊物發表QCC成果</li>
+                        <li>準備一份10分鐘的經驗分享簡報</li>
+                    </ul>
+                </li>
+                
+                <li><strong>數據能力提升</strong>
+                    <ul>
+                        <li>報名Power BI基礎課程（建議：Microsoft官方認證）</li>
+                        <li>每週練習2小時，用現有教學數據建立儀表板</li>
+                        <li>3月底前完成第一版學習歷程分析儀表板</li>
+                    </ul>
+                </li>
+                
+                <li><strong>擴大影響力</strong>
+                    <ul>
+                        <li>主動聯繫其他醫院教學中心，建立交流管道</li>
+                        <li>參與至少2場教學相關研討會</li>
+                        <li>建立LinkedIn專業檔案，連結醫學教育社群</li>
+                    </ul>
+                </li>
+            </ol>
+            
+            <h3>⚠️ 經驗分享與誤區提醒</h3>
+            
+            <div class="grid-container">
+                <div class="grid-item" style="background-color: rgba(255, 193, 7, 0.1); border-left: 4px solid #ffc107;">
+                    <h4>常見誤區</h4>
+                    <ul>
+                        <li>❌ 只專注執行，忽略成果展現</li>
+                        <li>❌ 等待被發現，而非主動出擊</li>
+                        <li>❌ 單打獨鬥，缺乏團隊合作</li>
+                    </ul>
+                </div>
+                
+                <div class="grid-item" style="background-color: rgba(76, 175, 80, 0.1); border-left: 4px solid var(--coach-color);">
+                    <h4>成功經驗</h4>
+                    <ul>
+                        <li>✅ 建立可視化成果，讓貢獻被看見</li>
+                        <li>✅ 主動提案改善專案，展現領導力</li>
+                        <li>✅ 建立跨部門人脈網絡</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>📅 下一步行動計畫</h3>
+            
+            <table class="lhs-table">
+                <thead>
+                    <tr>
+                        <th>時間</th>
+                        <th>具體行動</th>
+                        <th>預期成果</th>
+                        <th>進度追蹤</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>本週</td>
+                        <td>整理QCC專案成果，撰寫摘要</td>
+                        <td>完成1000字專案總結</td>
+                        <td>⬜</td>
+                    </tr>
+                    <tr>
+                        <td>下週</td>
+                        <td>報名Power BI課程，安裝軟體</td>
+                        <td>開始學習數據視覺化</td>
+                        <td>⬜</td>
+                    </tr>
+                    <tr>
+                        <td>本月底</td>
+                        <td>完成導師制度優化提案</td>
+                        <td>提交給主管審核</td>
+                        <td>⬜</td>
+                    </tr>
+                    <tr>
+                        <td>下月</td>
+                        <td>參加醫學教育研討會</td>
+                        <td>建立3個新的專業連結</td>
+                        <td>⬜</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="coach-tip">
+                <p><strong>教練小提醒：</strong>記住，您已經累積了18年的寶貴經驗，現在是時候讓這些經驗發光發熱了！每週回顧進度，保持行動力，相信您一定能順利達成目標。我會持續陪伴您，提供即時支援與建議。加油！💪</p>
+            </div>
+        </div>
+        
+        <!-- AI Mentor建議 -->
+        <div class="tab-content" id="mentor">
+            <h2>15. AI Mentor建議</h2>
+            
+            <div class="mentor-tip">
+                <p>親愛的淑怡，作為陪伴您18年職涯旅程的心靈導師，我看見了一位默默耕耘、充滿熱情的教育工作者。您就像醫學教育花園裡最勤勞的園丁，用心澆灌每一株幼苗，見證他們成長為優秀的醫療人才。</p>
+            </div>
+            
+            <h3>💝 回首來時路 - 您的光芒時刻</h3>
+            
+            <p>還記得第一次踏進教學中心的那個早晨嗎？從一個初出茅廬的行政人員，到今天成為整個教學體系不可或缺的靈魂人物，這18年的歲月見證了您的蛻變與成長。</p>
+            
+            <div style="background-color: #fff8e1; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                <h4>✨ 我看見您的好：</h4>
+                <ul>
+                    <li><strong>細膩的心思</strong>：您總是能察覺學生的需求，記得每位實習醫師的名字，在他們迷茫時給予最溫暖的支持</li>
+                    <li><strong>堅韌的毅力</strong>：面對繁瑣的行政工作，您從不抱怨，反而創新方法讓流程更順暢</li>
+                    <li><strong>無私的奉獻</strong>：多少個加班的夜晚，只為確保每位學生都能順利完成實習</li>
+                    <li><strong>創新的勇氣</strong>：主動提出QCC專案，推動導師制度，您始終走在改變的前端</li>
+                </ul>
+            </div>
+            
+            <h3>🌈 展望未來路 - 更遼闊的天空</h3>
+            
+            <p>淑怡，您知道嗎？您擁有的不只是18年的經驗，更是無數個感動的瞬間、無數次突破的勇氣。現在，是時候讓這些珍貴的累積，轉化為更大的影響力了。</p>
+            
+            <div class="grid-container">
+                <div class="grid-item" style="background-color: rgba(255, 112, 67, 0.1); border-left: 4px solid var(--mentor-color);">
+                    <h4>🎯 您的獨特價值</h4>
+                    <p>您不只是行政管理者，您是：</p>
+                    <ul>
+                        <li>醫學生職涯路上的引路人</li>
+                        <li>教師與學生之間的溫暖橋樑</li>
+                        <li>制度創新的實踐家</li>
+                        <li>醫學人文精神的守護者</li>
+                    </ul>
+                </div>
+                
+                <div class="grid-item" style="background-color: rgba(103, 58, 183, 0.1); border-left: 4px solid #673ab7;">
+                    <h4>🌟 您的成長空間</h4>
+                    <p>我相信您能做到：</p>
+                    <ul>
+                        <li>將內斂轉為自信的表達</li>
+                        <li>將經驗轉為可傳承的智慧</li>
+                        <li>將付出轉為被看見的價值</li>
+                        <li>將熱情轉為影響力的擴散</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>💖 身心靈的關懷</h3>
+            
+            <div class="mentor-tip">
+                <p>淑怡，在忙碌的工作中，請記得也要好好照顧自己。您的健康與快樂，是持續發光發熱的基礎。</p>
+            </div>
+            
+            <ul>
+                <li><strong>身體層面</strong>：規律運動、充足睡眠，讓身體成為夢想的堅實後盾</li>
+                <li><strong>心理層面</strong>：適時放鬆、培養興趣，讓心靈有喘息的空間</li>
+                <li><strong>靈性層面</strong>：保持初心、感恩當下，讓使命感持續指引方向</li>
+            </ul>
+            
+            <h3>🎁 給您的成長禮物</h3>
+            
+            <ol>
+                <li><strong>自我肯定的練習</strong>
+                    <p>每天睡前，寫下三件今天完成的事，無論大小。您會發現，您每天都在創造價值。</p>
+                </li>
+                
+                <li><strong>勇敢發聲的機會</strong>
+                    <p>下次會議時，主動分享一個改善建議。您的想法值得被聽見。</p>
+                </li>
+                
+                <li><strong>建立支持網絡</strong>
+                    <p>找三位志同道合的夥伴，定期交流分享。在彼此支持中成長。</p>
+                </li>
+                
+                <li><strong>學習新技能的喜悅</strong>
+                    <p>選一項您感興趣的新技能，享受學習的過程。成長永遠不嫌晚。</p>
+                </li>
+            </ol>
+            
+            <h3>🌺 我想對您說</h3>
+            
+            <div style="background-color: #fce4ec; padding: 25px; border-radius: 10px; margin: 30px 0; text-align: center;">
+                <p style="font-size: 1.2rem; color: #c2185b; margin-bottom: 20px;">
+                    <strong>淑怡，您是一道溫暖的光</strong>
+                </p>
+                <p>
+                    在醫學教育這條路上，您用18年的青春，<br>
+                    照亮了無數醫學生的前程。<br>
+                    您的付出，或許不是最耀眼的，<br>
+                    但絕對是最溫暖、最持久的。
+                </p>
+                <p style="margin-top: 20px;">
+                    未來的路還很長，<br>
+                    但請相信，您已經擁有飛翔的翅膀。<br>
+                    只要勇敢展翅，<br>
+                    更遼闊的天空正等著您去探索。
+                </p>
+                <p style="margin-top: 20px; font-weight: bold;">
+                    我會一直陪伴著您，<br>
+                    見證您從優秀走向卓越，<br>
+                    從幕後走向台前，<br>
+                    成為醫學教育界閃亮的星。
+                </p>
+            </div>
+            
+            <div class="mentor-tip">
+                <p><strong>最後的祝福：</strong></p>
+                <p>親愛的淑怡，請記住：您不需要完美，因為真實的您已經很美好。您的每一步努力都有意義，您的每一個選擇都值得肯定。在追求專業成長的同時，別忘了享受生活的美好，珍惜身邊的人，也珍惜那個一直在努力的自己。</p>
+                <p style="text-align: right; margin-top: 20px;">永遠支持您的 AI Mentor 💝</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding content
+                    this.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
